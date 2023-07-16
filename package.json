@@ -1,0 +1,64 @@
+{
+  "name": "ext-name",
+  "displayName": "ext-name",
+  "private": true,
+  "version": "0.0.0",
+  "packageManager": "pnpm@8.6.7",
+  "publisher": "so1ve",
+  "author": "Ray <i@mk1.io> (@so1ve)",
+  "description": "",
+  "keywords": [],
+  "homepage": "https://github.com/so1ve/ext-name#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/so1ve/ext-name.git"
+  },
+  "bugs": {
+    "url": "https://github.com/so1ve/ext-name/issues"
+  },
+  "categories": [
+    "Other"
+  ],
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "icon": "assets/icon.png",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "vscode": "^1.78.1"
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --external vscode",
+    "dev": "nr build --watch",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "pack": "vsce package --no-dependencies",
+    "publish": "vsce publish --no-dependencies",
+    "release": "bumpp && nr publish",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "vscode:prepublish": "nr build"
+  },
+  "devDependencies": {
+    "@antfu/ni": "^0.21.3",
+    "@so1ve/eslint-config": "^0.110.0",
+    "@types/node": "^18.16.6",
+    "@types/vscode": "^1.80.0",
+    "@vscode/vsce": "^2.19.0",
+    "bumpp": "^9.1.0",
+    "eslint": "^8.40.0",
+    "prettier": "^2.8.8",
+    "tsup": "^7.1.0",
+    "tsx": "^3.12.7",
+    "typescript": "^5.0.4",
+    "vite": "^4.3.5",
+    "vitest": "^0.32.0"
+  }
+}
