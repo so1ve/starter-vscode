@@ -37,8 +37,8 @@
   "scripts": {
     "build": "tsup src/index.ts --external vscode",
     "dev": "nr build --watch",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint": "eslint . && prettier . --check",
+    "lint:fix": "eslint . --fix && prettier . --write",
     "pack": "vsce package --no-dependencies",
     "publish": "vsce publish --no-dependencies",
     "release": "bumpp && nr publish",
