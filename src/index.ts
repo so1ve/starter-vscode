@@ -1,7 +1,7 @@
-import { window } from "vscode";
+import * as vscode from "vscode";
 
 export function activate() {
-	window.showInformationMessage("Hello");
+	vscode.window.showInformationMessage("Hello");
 }
 
 export function deactivate() {}
